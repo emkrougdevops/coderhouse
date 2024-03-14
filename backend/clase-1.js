@@ -162,6 +162,11 @@ class Contador {
     Contador.contadorGlobal++;
   };
 
+  contar = () => {
+    this.contadorLocal++;
+    Contador.contadorGlobal++;
+  };
+
   getCuentaIndividual = () => this.contadorLocal;
 
   getCuentaGlobal = () => Contador.contadorGlobal;
