@@ -1,6 +1,6 @@
 
 class ProductManager {
-    letructor() {
+    constructor() {
       this.products = [];
     }
   
@@ -56,7 +56,7 @@ class ProductManager {
   try {
     manager.addProduct({
       title: "producto prueba",
-      description: "Este es un producto prueba",
+      description: "Este es un producto prueba 2",
       price: 200,
       thumbnail: "Sin imagen",
       code: "abc123",
@@ -74,3 +74,5 @@ class ProductManager {
     console.error(error.message);
   }
   
+
+
