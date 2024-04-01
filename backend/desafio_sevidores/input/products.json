@@ -1,0 +1,12 @@
+[
+    { "id": 1, "name": "Arroz", "price": 1000 },
+    { "id": 2, "name": "Fideos", "price": 1500 },
+    { "id": 3, "name": "Harina", "price": 1300 },
+    { "id": 4, "name": "Polenta", "price": 1450 },
+    { "id": 5, "name": "Mani", "price": 900 },
+    { "id": 6, "name": "Papas fritas", "price": 1200 },
+    { "id": 7, "name": "Queso", "price": 2100 },
+    { "id": 8, "name": "Huevo", "price": 1700 },
+    { "id": 9, "name": "Cereal Mix", "price": 500 },
+    { "id": 10, "name": "Coca Cola", "price": 1600 }
+]
