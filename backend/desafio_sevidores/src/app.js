@@ -3,7 +3,7 @@ const fs = require('fs');
 const app = express();
 
 // lectura de Json con fs
-const productsData = fs.readFileSync('products.json');
+const productsData = fs.readFileSync('products.json')
 const products = JSON.parse(productsData);
 
 // Ruta 1 solicitada para este desafio

@@ -1,0 +1,46 @@
+[
+    {
+      "id": 1,
+      "title": "Arroz",
+      "description": "Este producto no es una prueba",
+      "code": "1231",
+      "price": 1000,
+      "status": true,
+      "stock": 100,
+      "category": "almacen",
+      "thumbnail": "Con imagen"
+    },
+    {
+      "id": 2,
+      "title": "Fideos",
+      "description": "Este producto no es una prueba",
+      "code": "1232",
+      "price": 1100,
+      "status": true,
+      "stock": 110,
+      "category": "almacen",
+      "thumbnail": "Con imagen"
+    },
+    {
+      "id": 3,
+      "title": "Harina",
+      "description": "Este producto no es una prueba",
+      "code": "1233",
+      "price": 1200,
+      "status": true,
+      "stock": 120,
+      "category": "almacen",
+      "thumbnail": "Con imagen"
+    },
+    {
+      "id": 4,
+      "title": "Huevo",
+      "description": "Este producto no es una prueba",
+      "code": "1234",
+      "price": 1300,
+      "status": true,
+      "stock": 130,
+      "category": "almacen",
+      "thumbnail": "Con imagen"
+    }
+  ]
