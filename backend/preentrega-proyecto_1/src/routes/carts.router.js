@@ -1,14 +1,14 @@
 import { Router } from 'express'
 import fs from 'fs'
 import path from 'path'
-import { __dirname } from '../src/utils.js'
+import { __dirname } from '../utils.js'
 
 const router = Router()
 
-//DEFINICION DE LOS METODOS DE CRUD
-
 // Crear un nuevo carrito
 let carts = [];
+
+//DEFINICION DE LOS METODOS DE CRUD
 
 // Endpoint para crear un nuevo carrito
 router.post('/', (req, res) => {
@@ -56,10 +56,10 @@ router.post('/:cid/product/:pid', (req, res) => {
     //res.json(cart.products);
 
     // Convertir los datos del carrito a JSON
-    const cartJSON = JSON.stringify(cart.products);
+    const cartJSON = JSON.stringify(cart.products)
 
     // Escribir el JSON en el archivo
-    const filePath = path.join(__dirname, '../data/carts.products.json');
+    const filePath = path.join(__dirname+'/data/carts.products.json');
     fs.writeFile(filePath, cartJSON, (err) => {
         if (err) {
             console.error('Error al escribir en el archivo:', err);
