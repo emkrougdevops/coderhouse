@@ -7,10 +7,11 @@ const router = Router()
 
 //Creacion de productsManager
 class ProductManager {
-    constructor() {
-        this.products = []           
+    constructor() {      
         this.nextId = 1;
         this.path = path.join(__dirname+'/data/products.json'); // Ruta del archivo
+        this.productsData = fs.readFileSync(this.path)
+        this.products = JSON.parse(this.productsData);           
     }
   
     getProducts() {
@@ -26,7 +27,7 @@ class ProductManager {
     }
 
     addProduct(product) {
-      let existingProduct = this.products.find(p => p.code === product.code);
+      let existingProduct = this.products.find(p => p.id === product.id);
       if (existingProduct) {
         throw new Error('El código del producto ya está en uso.');
       }
@@ -93,15 +94,9 @@ router.get('/:pid', (req, res) => {
 //Endpoint para agregar producto
 router.post('/', (req, res) => {
     try {
-        // Generar los campos obligatorios en el servidor
-        const title = "Arroz";
-        const description = "Descripción del nuevo producto";
-        const code = 1234;
-        const price = 1500;
-        const status = true;
-        const stock = 150;
-        const category = "Sin categoría";
-        const thumbnail="Sin imagen"
+
+        // Extraer los datos del cuerpo de la solicitud
+        const { title, description, code, price, status, stock, category, thumbnail } = req.body;
         
         // Verificar si todos los campos obligatorios están presentes
         if (!title || !description || !code || !price || !status || !stock || !category) {
@@ -132,21 +127,16 @@ router.post('/', (req, res) => {
 // Endpoint para actualizar un producto por ID
 router.put('/:pid', (req, res) => {
     const productId = parseInt(req.params.pid);
-    const updatedFields = {
-        "title":"Aceite",
-        "description":"Este producto no es una prueba",
-        "code":"1231",
-        "price":3000,
-        "status":true,
-        "stock":170,
-        "category":"almacen",
-        "thumbnail":"Con imagen"
-    }
+    const updatedFields = req.body;
     try {
+        // Verificar si se proporcionaron campos para actualizar
+        if (Object.keys(updatedFields).length === 0) {
+            throw new Error('No se proporcionaron campos para actualizar.');
+        }
         const updatedProduct = productManager.updateProduct(productId, updatedFields);
         res.json(updatedProduct);
     } catch (error) {
-        res.status(404).json({ error: error.message });
+        res.status(400).json({ error: error.message });
     }
 });
 
