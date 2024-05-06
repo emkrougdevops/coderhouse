@@ -9,5 +9,60 @@
     "stock": 150,
     "category": "almacen",
     "thumbnail": "Con imagen"
+  },
+  {
+    "id": 2,
+    "title": "Aceite",
+    "description": "Este producto no es una prueba",
+    "code": "1233",
+    "price": 1500,
+    "status": true,
+    "stock": 150,
+    "category": "almacen",
+    "thumbnail": "Sin imagen"
+  },
+  {
+    "id": 3,
+    "title": "Fideo",
+    "description": "Este producto no es una prueba",
+    "code": "1235",
+    "price": 1600,
+    "status": true,
+    "stock": 200,
+    "category": "almacen",
+    "thumbnail": "Sin imagen"
+  },
+  {
+    "id": 4,
+    "title": "Harina",
+    "description": "Este producto no es una prueba",
+    "code": "1236",
+    "price": 2000,
+    "status": true,
+    "stock": 100,
+    "category": "almacen",
+    "thumbnail": "Sin imagen"
+  },
+  {
+    "id": 5,
+    "title": "Sopa",
+    "description": "Este producto no es una prueba",
+    "code": "1237",
+    "price": 2100,
+    "status": true,
+    "stock": 110,
+    "category": "almacen",
+    "thumbnail": "Sin imagen"
+  },
+  {
+    "id": 6,
+    "title": "Nuez",
+    "description": "Este producto no es una prueba",
+    "code": "1237",
+    "price": 2100,
+    "status": true,
+    "stock": 110,
+    "category": "almacen",
+    "thumbnail": "Sin imagen"
   }
 ]

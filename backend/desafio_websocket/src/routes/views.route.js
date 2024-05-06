@@ -1,34 +1,41 @@
 import { Router } from "express";
+import { __dirname } from "../utils.js";
+import fs from 'fs'
+import { title } from "process";
 
 const router = Router()
 
-const products = [
-    {id: '1', title: 'producto 1', precio: '100'},
-    {id: '2', title: 'producto 2', precio: '101'},
-    {id: '3', title: 'producto 3', precio: '102'},
-    {id: '4', title: 'producto 4', precio: '103'},
-    {id: '5', title: 'producto 5', precio: '104'}    
-]
+class ViewsManager{
+    constructor(){
+        this.productsData = fs.readFileSync(__dirname+'/data/products.json')
+        this.products = JSON.parse(this.productsData); 
+    }
 
-const user = {
-    username: 'eliaskroug',
-    nombre: 'elias',
-    apellido: 'kroug',
-    role: 'admin'
+    getProducts(){
+        return this.products
+    }
 }
 
+//ManagerViews
+const viewManager = new ViewsManager()
+
+//ruta con datos que va a generar el home.handlebars
 router.get('/', (req, res) => {
+    const productAll = viewManager.getProducts()
+    const user = {
+        username: 'eliaskroug',
+        nombre: 'elias',
+        apellido: 'kroug',
+        role: 'admin'
+    }
+    res.render('home', { productAll,
+        role: user.role === 'admin' })
+})
 
-    res.render('home', { 
-        username: user.username,
-        nombre: user.nombre,
-        apellido: user.apellido,
-        role: user.role === 'admin',
-        title: 'mercadito || Elias',
-        products,
-        styles: 'homeStyles.css' 
-    })
-
+//ruta con datos que va a generar el realTimeProducts.handlebars
+router.get('/realtimeproducts', (req, res) => {
+    const productAll = viewManager.getProducts()
+    res.render('realTimeProducts', { productAll })
 })
 
 export default router

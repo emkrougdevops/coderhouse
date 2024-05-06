@@ -1,0 +1,12 @@
+<main>
+    <h1>Hola Bienvenidos al realTimeProducts</h1>
+    <div>
+        <ul>
+            {{#each productAll}}
+                <li>{{this.title}} - {{this.price}}</li>
+            {{/each}}
+        </ul>
+    </div>
+</main>
+<script src="/socket.io/socket.io.js"></script>
+<script src="/js/realTimeProducts.js"></script>
